@@ -1,0 +1,30 @@
+virtual environment
+
+1) pip install virtualenvwrapper-win
+	install command to download the virtual environment creator
+
+2) mkvirtualenv "name of environment"
+	command to create a new virtual environment
+
+3) deactivate 
+	when you ant to exit an virtual environment
+
+4) workon "name of environment"
+	when we want to enter a pre-initialised environment
+
+list of al the virtual environments created in your system is shown in C:\Users\"system name"\Envs directory of your system
+
+
+Django
+
+1) pip install django
+	to install django
+
+1) django-admin startproject 'name of project'
+	go in the directory where you want to create project and then use this command to create django project
+
+2) python manage.py startapp 'name of app'
+	to start app in project
+
+3) python manage.py runserver
+	to run the project
