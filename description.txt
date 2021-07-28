@@ -1,0 +1,20 @@
+1] Dynamic data assignment
+
+objective of this project is to startup a django file and learn how to pass data from backend to front end. we have not yet to connect a backend storage, but we will hardode the data for now 
+
+    procedure:
+    
+(cmd)   a)workon Learning_Django (Learning_Django is the name of virtual envirnment this repo series)
+(cmd)   b)django-admin startproject dynamic data assignment (will give no message in cmd but will create required files in the dir)
+        c)-> manage.py   : responsible for running the server and other important functionalities. we will not need to code anything in it 
+          -> urls.py     : all of the links to connected urls are stored here; i.e if we create a new app and create urls in it , it should be passed in here as well
+          -> settings.py : this is the most important file of all. all of the changes required in the projects are adjusted from here       
+(cmd)   d)python manage.py startapp myapp: creates app for our project. app are the subset for project. a specific feature of the entire project could be created here . eg : instagram dm's could b an app and post feed could be another app. both are part of the same project but works independently
+        e)-> urls.py   : creat this file in myapp. link it with urls.py in project.
+          -> views.py  :contains list of all the html pages and when to open which
+        f)create templates folder in the root dir. link this with settings.py. templates is the folder where all of the html files goes
+        g) set path="" which means it is the home page. then link it with views by dowing views.index and then creating index function in views.py .
+        h) now we route from vies to the templates files. but before routing to the html file add a python dictionary which will contain all the key value pair of data comming from back end 
+        i) in the html file the value could now be excessed by using double curly braces outside the key  
+(cmd)   j) python manage.py run server : we will get an http address. past it in your browser and get the html page running 
+(cmd)   k) use ctrl+break /ctrl+c to break out of the server
