@@ -1,0 +1,5 @@
+Get 
+all of the data entered here comes in the url and then accessed;ideal for general infos which is ok for anyone to see
+
+post
+the data does not appear in url. csrf token needed. ideal for private info like bank account numbers and login id / passwords of users 
