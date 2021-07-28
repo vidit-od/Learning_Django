@@ -18,3 +18,26 @@ objective of this project is to startup a django file and learn how to pass data
         i) in the html file the value could now be excessed by using double curly braces outside the key  
 (cmd)   j) python manage.py run server : we will get an http address. past it in your browser and get the html page running 
 (cmd)   k) use ctrl+break /ctrl+c to break out of the server
+
+2] Word_Counter
+
+objective: To create a simple website with form. add text in form and submit. we are redicted to other site which contains total number of words in the form
+
+concepts : GET method vs POST Method
+
+GET method:
+  a)create the basic setup for a django file, link index.htm for the home page and counter.htm to be the redicted page 
+  b) add 'base\counter' as link for the second page from urls.py. use views.counter to pass data in the counter page when it loades 
+  c) in the function of counter in views.py use text= request.get to get the entire text content in 'text' variable 
+  d)use len(text.split()) to count the number of word.use it in the website with {{text}} formate as learned in the previous project
+
+  when  base\counter is poped up we se the url as base\counter\text=all the text we wrote in form
+  this is a disadvantage for using get method.
+  as private data like bank details and social media login details are not safe to be passed in the link we use post method here
+
+POST method:
+  a) almost all of the setup is similar. only change in index.html is in form method we use 'POST' now
+  b) in the first line of corm tag add {% csrf_token %}
+  c) no changes in urls.py , in views.py insted of request.GET we use request.POST
+
+  now when we run this app, in the counter page text= content is not shown 
