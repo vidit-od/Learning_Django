@@ -41,3 +41,16 @@ POST method:
   c) no changes in urls.py , in views.py insted of request.GET we use request.POST
 
   now when we run this app, in the counter page text= content is not shown 
+
+3] Static Files
+  In Django  all of the HTML files are called template files. all the other files such as image, css, js etc are called static files 
+  Now usually we just use the link tag to link html with any other file but it is not completly true in django. a certain procedure i needed to be followed which is:
+    a)create a folder named static which will contain all of these files 
+    b)in settings.py import os and below static file url add 'STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)'. note it is a tuple and hence the empty field after comma is neccery 
+    c)on top of the html file use {% load static %} to load the static tag
+    d) now we can use all of the href and src's easily. but there is 1 difference: 
+      initially : a href= "abc" 
+      now : a href = "{% static 'abc' %}" . note the spaces and format is very specific and should be used as it is. 
+
+  procedure to add other html page:
+    a href = "{urls "index"}" 
