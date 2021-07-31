@@ -54,3 +54,17 @@ POST method:
 
   procedure to add other html page:
     a href = "{urls "index"}" 
+
+4] Models
+  -> model view template
+  -> this is how data transfers in django. model is the file which contain information. it is transfered to views and then to templates.
+  -> we have to add "from .model import 'name of class' in the views file to access it"  
+
+  in template files conventionally we cannot use conditional statements like for if etc. but in django we can
+  eg:way to use for in html with django
+
+    {% for i in range(10) %}
+      <h1>hello<\h1>
+    {% endfor %}
+
+  we have to use endfor tag in django coz usually ending in python is done through indentation. but indenting in html is not possible so we use {% endfor %} tag 
