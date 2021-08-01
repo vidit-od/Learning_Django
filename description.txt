@@ -68,3 +68,17 @@ POST method:
     {% endfor %}
 
   we have to use endfor tag in django coz usually ending in python is done through indentation. but indenting in html is not possible so we use {% endfor %} tag 
+
+  5] Admin
+    -> django framework provides an admin page which could be used with '\admin' url
+    -> when we enter first of all it asks for username and password. so for this we want to create a superuser
+    -> also, before using the admin page we have to link the models to admin. for that , in settings.py => installed apps add 'myapp'
+    -> with this the link is done. but now the model.py is a model class of django and thus declarations of variable there is bit different:
+      * for strings we use 'models.CharField(max_length=x)' where x is max length of strings
+      * in django models unique id are always pre given, so we do not have to do that
+    -> now login with the user id and password
+    -> we will find our model there. add some data 
+    -> model -> view -> template. so data is in model. we have to send to views 
+    -> use 'person.object.all()' for person class. this will add all of the data in a list 
+    -> render and return to templats. use for loop similar to the previous exercise and deliver data to templates
+     
