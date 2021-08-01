@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+main{
+    display:flex;
+    justify-content: center;
+}
+.content{
+    display: grid;
+    justify-content: center;
+}
+.content a{
+    text-align: center;
+}
+.collection{
+    display: flex;
+    margin: 0 auto;
+    padding: 0%;
+    border: none;
+    justify-content: center;
+    max-width: 70%;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.item{
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    min-width: 150px;
+    height: 200px;
+    border-radius: 25px;
+    color: black;
+    background-color:steelblue;
+}
+.collection.item p{
+    display: block;
+}

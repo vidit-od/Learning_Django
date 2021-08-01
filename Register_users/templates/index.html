@@ -1,0 +1,15 @@
+{% load static%}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<main>
+    <div class="content">    
+        <div class="collection">
+            {% for person in persons %}
+                <div class="item">
+                    <p>name: {{person.name}}</p>
+                    <p>job: {{person.job}}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'login' %}">login</a>
+    </div>
+</main>
