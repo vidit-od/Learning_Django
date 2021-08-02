@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h5{
+    color: red;
+}
+.login{
+    width: 300px;
+}
+.username{
+    display: flex;
+    justify-content: space-between;
+}
+.password{
+    display: flex;
+    justify-content: space-between;
+}
+.password input{
+    transform: translateX(-28px);
+}

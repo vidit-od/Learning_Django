@@ -1,0 +1,58 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<div class="header">
+    {% if user.is_authenticated %}
+    <h1>Welcome {{user.username}}</h1>
+    {% else %}
+    <h1>Welcome Guest</h1>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}"><button>logout</button></a>
+    {% else %}
+        <a href="{% url 'login' %}"><button>login/signup</button></a>
+    {% endif %}
+</div>
+
+<div class="content">
+    {% for data in datas %}
+    <div class="card">
+        <div class="info">
+            <div class="field">
+                <p>Brand : </p>
+                {% if user.is_authenticated %}
+                    <p>{{data.Brand}}</p>
+                {% else %}
+                    <p> XXXX</p>
+                {% endif %}
+            </div>
+            <div class="field">
+                <p>Product : </p>
+                {% if user.is_authenticated %}
+                    <p>{{data.Product}}</p>
+                {% else %}
+                    <p> XXXX</p>
+                {% endif %}
+            </div>
+            <div class="field">
+                <p>Price :</p>
+                {% if user.is_authenticated %}
+                    <p>{{data.cost}}</p>
+                {% else %}
+                    <p> $$$$</p>
+                {% endif %}
+            </div>
+            <hr>
+        </div>
+        {% if user.is_authenticated %}
+        <br>
+        {% else %}
+        <div class="Locked">
+            <p>This content is locked </p>
+            <P>Login/ signup to Preview</P>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    
+</div>

@@ -1,0 +1,23 @@
+{% load static %}
+<h1>Login Here</h1>
+<link rel="stylesheet" href="{% static 'style_login.css' %}">
+
+{% for message in messages %}
+    <h5>{{message}}</h5>
+{% endfor %}
+<form method="POST" action="login">
+    {% csrf_token %}
+    <div class="login">
+       <div class="username">
+            <p>UserName :</p> 
+            <input type="text" name="username"><br>
+        </div>
+        <div class="password">
+            <p>Password  :</p> 
+            <input type="password" name="password">
+        </div>
+       <input type="submit" value="submit">
+    </div>
+</form>
+
+<a href="{% url 'signup' %}">Click here to Create New account</a>

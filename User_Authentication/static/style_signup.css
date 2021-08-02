@@ -1,0 +1,10 @@
+.details{
+    width: 300px;
+}
+.details p{
+    display: flex;
+    justify-content: space-between;
+}
+h5{
+    color: red;
+}
