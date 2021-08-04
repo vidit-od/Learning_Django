@@ -108,4 +108,17 @@ POST method:
     =>logout of account:
       -> use: Auth.logout(request)
       -> this will logout the current logged in user 
-     
+  7] connecting external servers:
+    -> i used postgresql to connect my user Authentication project 
+    -> create a database through pgadmin
+    -> in settings.py go to database section and update it as below:
+        'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'name of database in pgadmin',
+         'USER':'postgres',
+         'PASSWORD':'pgadmin will ask you to create a password, use that here',
+         'HOST':'localhost'
+    -> after this changes use ; python manage.py makemigrations ; then do : python manage.py migrate
+    -> all the models created in models.py will appear in the pgadmin and the link is complete now 
+
+    ** note: when we link django with postgresql all the previous data (which we entered using django/admin panel )is mostlikely erased. atleast it was in my categories
+    
