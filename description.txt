@@ -81,4 +81,31 @@ POST method:
     -> model -> view -> template. so data is in model. we have to send to views 
     -> use 'person.object.all()' for person class. this will add all of the data in a list 
     -> render and return to templats. use for loop similar to the previous exercise and deliver data to templates
+
+  6] User Authentication
+    => create new account:
+      -> request.post['username'] ,email, password to get both these value from login form to view.py
+      -> check if fields are empty
+      -> check if username already exists by doing : if User.objects.filter(username=username).exists()
+      -> check if email already exists by doing : if User.objects.filter(username=email).exists()
+      -> if all of these categories not true then create new account by doing:
+          user=User.objects.create_user(username=username,email=email,password=password)
+          user.save()
+      -> then redirect to login page 
+
+    => login to an account:
+      -> login to account using : user=auth.authenticate(username=username,password=password)
+      -> if value of user after abolve line is none => account does not exist/ password wrong 
+      -> else login; 
+        
+        =>if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Invalid Details')
+      -> redirect to home page if login successful else redirect to login page 
+
+    =>logout of account:
+      -> use: Auth.logout(request)
+      -> this will logout the current logged in user 
      
